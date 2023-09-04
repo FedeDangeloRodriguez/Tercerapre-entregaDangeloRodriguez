@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+
+
+{% block contenidoQueCambia %}
+
+    <h1>Resultado de la búsqueda: </h1>
+
+    <ul>
+
+        {% for jugador in jugadores %}
+            <li>
+                {{jugador.nombre}},{{jugador.apellido}} - Edad:{{jugador.edad}} 
+            </li>
+        {% endfor %}
+            
+
+    </ul>
+    
+{% endblock contenidoQueCambia %}
+    

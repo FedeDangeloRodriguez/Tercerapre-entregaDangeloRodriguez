@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+
+
+{% block contenidoQueCambia %}
+
+<form action="{% url 'JugadorFormulario' %}" method="post">{% csrf_token %}
+
+    {{miFormulario.as_p}}
+    <button class="btn btn-primary btn rounded-pill mt-5" type="submit">Enviar</button>
+</form>
+    
+{% endblock contenidoQueCambia %}
+    

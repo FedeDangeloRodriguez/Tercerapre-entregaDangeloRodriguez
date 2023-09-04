@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+
+
+{% block contenidoQueCambia %}
+    <h1 class="mb-5">Entrenadores</h1>
+
+    {% for entrenador in entrenadores %}
+    <ul>
+        <li>{{entrenador.nombre}},{{entrenador.apellido}}, {{entrenador.edad}} años</li>
+    </ul>
+    <div>
+        <form action="{% url 'EliminaEntrenadores' entrenador.id %}" method="post">{% csrf_token %}
+            <button class="btn btn-danger mt-0" type="submit">Eliminar</button>
+        </form>
+    </div>
+    {% endfor %}
+    <a class="btn btn-primary btn rounded-pill mt-5" href="{% url 'EntrenadorFormulario' %}">Agregar Entrenador</a>
+    <a class="btn btn-primary btn rounded-pill mt-5" href="{% url 'BusquedaEntrenador' %}">Buscar Entrenador</a>
+
+{% endblock contenidoQueCambia %}

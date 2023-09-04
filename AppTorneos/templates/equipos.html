@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+
+
+{% block contenidoQueCambia %}
+    
+    <h1>Equipos</h1>
+
+    {% for equipo in equipos %}
+            <li style="font-size: x-large;">{{equipo.nombre}}, del barrio {{equipo.barrio}}. Tiene {{equipo.titulos}} títulos</li>
+        
+        <div>
+            <form action="{% url 'EliminaEquipos' equipo.id %}" method="post">{% csrf_token %}
+                <button class="btn btn-danger mt-0" type="submit">Eliminar</button>
+            </form>
+        </div>
+    {% endfor %}
+    
+        <a class="btn btn-primary btn rounded-pill mt-5" href="{% url 'EquipoFormulario' %}">Agregar Equipo</a>
+        <a class="btn btn-primary btn rounded-pill mt-5" href="{% url 'BusquedaEquipo' %}">Buscar Equipo</a>
+
+{% endblock contenidoQueCambia %}
+    

@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+
+
+{% block contenidoQueCambia %}
+
+    <form action="{% url 'BuscarJugadores' %}" method="get">
+
+        <p>Jugador: <input type="text" name="nombre"></p>
+        <button class="btn btn-primary btn rounded-pill mt-5" type="submit">Buscar</button>
+
+    </form>
+    
+{% endblock contenidoQueCambia %}
+    

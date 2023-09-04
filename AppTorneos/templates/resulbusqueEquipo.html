@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+
+
+{% block contenidoQueCambia %}
+
+    <h1>Resultado de la búsqueda: </h1>
+
+    <ul>
+
+        {% for equipo in equipos %}
+            <li>
+                {{equipo.nombre}} - Barrio:{{equipo.barrio}} - Titulos:{{equipo.titulos}} 
+            </li>
+        {% endfor %}
+            
+
+    </ul>
+    
+{% endblock contenidoQueCambia %}
+    
